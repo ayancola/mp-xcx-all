@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{0}}" main_color="{{main_color}}"></TabBar>
+</view>
+  
+<view class="container">
+    <view class="banner">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+            <block wx:for="{{banner_img}}" wx:key="id">
+                <swiper-item>
+                    <image src="{{item}}" class="banner_img" mode="{{fill}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="box1 w-93 m-ot mt-70">
+        <view class="title">
+            <text class="cn">产品系列</text>
+            <text class="en">Product series</text>
+            <view class="line"></view>
+        </view>
+        <view class="product-class mt-50">
+            <block wx:for="{{productClass_list}}" wx:key="id">
+                <view class="class-item flex flex-wrap" bindtap="linkToClass" data-cid="{{item.class_id}}" >
+                    <view class="txt">
+                        <text class="p font-over1">{{item.title}}</text>
+                        <text class="span">{{item.title_en}}</text>
+                        <text class="a">查看更多</text>
+                    </view>
+                    <image class="img" src="{{item.images_s}}" mode="{{fill}}"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="box2 w-93 m-ot">
+        <view class="title">
+            <text class="cn">推荐产品</text>
+            <text class="en">Product</text>
+            <view class="line"></view>
+        </view>
+        <view class="product-list mt-40 text-center flex flex-wrap">
+            <view class="product-item" wx:for="{{hotProduct}}" wx:key="id">
+                <navigator url=""  data-channel="product_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+                    <image src="{{item.img}}" class="pro_img" mode="{{fit}}"></image>
+                    <text class="p w100 f-26 c-4c font-over1 mt-20 lh-18">{{item.title}}</text>
+                </navigator>
+            </view>
+        </view>
+        <navigator url='' data-channel="products" data-params="" bind:tap="navigatorTap" class="viewmore">查看更多产品</navigator>
+    </view>
+    <view class="box3 mt-70">
+        <view class="w-93 m-ot">
+            <view class="title">
+                <text class="cn">应用领域</text>
+                <text class="en">application</text>
+                <view class="line"></view>
+            </view>
+            <view class="case-list mt-50">
+                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+                    <block wx:for="{{case_img}}" wx:key="id">
+                        <swiper-item>
+                            <image src="{{item.images_s}}" class="case_img" mode="{{fill}}" bindtap="viewimg" data-img="{{item.images_s}}"></image>
+                            <text class="p mt-10 font-over1"></text>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            <navigator data-channel="photo" data-params="rid=20" bind:tap="navigatorTap"  class="viewmore mt-20">查看更多案例</navigator>
+        </view>
+    </view>
+    <view class="box4 pb-40">
+        <view class="w-93 m-ot">
+            <view class="flex">
+                <view class="title">
+                    <text class="cn">新闻资讯</text>
+                    <text class="en">NEWS</text>
+                </view>
+            </view>
+            <view class="news-list mt-30">
+                <navigator wx:for="{{newsList}}" wx:key="id" class="news-item flex" data-channel="news_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+                    <view class="txt">
+                        <view class="font-over2 f-32 c-333">{{item.title}}</view>
+                        <view class="f-28 c-999 mt-30">{{item.addtime}}</view>
+                    </view>
+                    <image class="img" src="{{item.images ? item.images : 'http://qs.demo.pbinfo.cn/wxapp/xcx-002/img/nopic.jpg' }}" mode="{{fill}}"></image>
+                </navigator>
+            </view>
+            <navigator data-channel="news" data-params="" bind:tap="navigatorTap"  class="viewmore mt-70">查看更多资讯</navigator>
+        </view>
+    </view>
+</view>

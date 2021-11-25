@@ -1,0 +1,2 @@
+/* pages/products/products.wxss */
+.pro-list-loading{display: block;width: 100%;font-size: 26rpx;color: #999;text-align: center;line-height: 3;}

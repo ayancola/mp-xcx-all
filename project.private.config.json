@@ -1,0 +1,156 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "分享 关于我们，企业二",
+                    "pathName": "pages/index/index",
+                    "query": "channel=about&clientID=89",
+                    "scene": null
+                },
+                {
+                    "name": "分享 产品，企业一",
+                    "pathName": "pages/index/index",
+                    "query": "channel=product_detail&id=1259&clientID=88",
+                    "scene": null
+                },
+                {
+                    "name": "参数错误 无客户ID",
+                    "pathName": "pages/index/index",
+                    "query": "channel=news",
+                    "scene": null
+                },
+                {
+                    "name": "分享测试",
+                    "pathName": "pages/index/index",
+                    "query": "channel=products&clientID=89",
+                    "scene": null
+                },
+                {
+                    "name": "企业三",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=90&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "参数错误 详情页无ID",
+                    "pathName": "pages/index/index",
+                    "query": "channel=product_detail&clientID=88",
+                    "scene": null
+                },
+                {
+                    "name": "企业四",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=91&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "企业五",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=92&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "企业六",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=93&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "196 xcx-008",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=196",
+                    "scene": null
+                },
+                {
+                    "name": "197 xcx-009",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=197&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "198 xcx-010",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=198&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "202 xcx-011",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=202&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "201 xcx-012",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=201",
+                    "scene": null
+                },
+                {
+                    "name": "208 xcx-013",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=208",
+                    "scene": null
+                },
+                {
+                    "name": "线上 id:181",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=181&=&channel=products",
+                    "scene": null
+                },
+                {
+                    "name": "线上190",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=190",
+                    "scene": null
+                },
+                {
+                    "name": "179 xcx-001",
+                    "pathName": "pages/index/index",
+                    "query": "clientID=179&channel=",
+                    "scene": null
+                },
+                {
+                    "name": "195 xcx-007",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=195",
+                    "scene": null
+                },
+                {
+                    "name": "209 xcx-014",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=209",
+                    "scene": null
+                },
+                {
+                    "name": "210 xcx-015",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=210",
+                    "scene": null
+                },
+                {
+                    "name": "215 xcx-016",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=215",
+                    "scene": null
+                },
+                {
+                    "name": "216 xcx-017",
+                    "pathName": "pages/index/index",
+                    "query": "channel=&clientID=216",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

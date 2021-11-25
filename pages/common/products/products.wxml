@@ -1,0 +1,35 @@
+<view class="globalNavBar">
+    <TabBar id="mp_tabbar" iconPath="{{iconUrl}}" current="{{2}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container w-100">
+  <view class="page-product w-100">
+    <view class=' T w-93 m-ot'>
+      <form bindsubmit='search'>
+        <input confirm-type='search' bindconfirm="search" type='text' focus='{{focus}}' placeholder='请输入搜索关键字' placeholder-style='color:#bbb'  adjust-position='false' class='f-24 c-bbb dis-m' name='search' ></input>
+        <button form-type='submit' class='dis-m' hover-class='none'><image src='{{pageWeburl}}/weapp_source/images/search.png' mode='{{fit}}'></image></button>
+      </form>
+    </view>
+    <view class='B flex w-100'>
+      <scroll-view class='BL' scroll-y style="height:{{scrollViewHeight}}">
+        <block wx:for='{{nav_list}}' wx:key='index'>
+          <view class="li f-24 c-999 pos-r tr-ease-05" bindtap='choose_right' data-cid='{{item.class_id}}' data-ccid="{{item.class_id==cid}}" data-index='{{item.index}}'  
+          style="border-color:{{item.class_id==cid ? main_color :''}};color:{{item.class_id==cid ? main_color :''}};">{{item.title}}</view>
+        </block>
+      </scroll-view>
+      <scroll-view class='BR' scroll-y style="height:{{scrollViewHeight}}" bindscrolltolower='scroll_bottom'>
+        <!-- <view class='pro-T pos-r'>
+          <text class='pos-a Ycenter f-30 c-fff blod'>{{nav_list[list_index].title}}</text>
+        </view> -->
+        <view class='pro-list flex flex_dj'>
+          <block wx:for='{{product_list}}' wx:key='id'>
+            <navigator class="flex flex-Y-center" hover-class='none' data-channel="product_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+              <view class='list-img'><image src='{{item.img}}' mode='{{fit}}'></image></view>
+              <view class='list-text '><text class='font-over2 f-26 c-333'>{{item.title}}</text></view>
+            </navigator>
+          </block>
+          <view class="pro-list-loading" wx:if="{{pro_loading}}">加载中...</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

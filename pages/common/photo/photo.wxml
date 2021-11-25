@@ -1,0 +1,8 @@
+<scroll-view class="photo w-93 m-ot scroll-view h-100" scroll-y bindscrolltolower='scroll_bottom'>
+    <view class="listItem" wx:for="{{photo_list}}" wx:key="id">
+        <view class="listImg" bindtap="viewimg" data-img="{{item.images}}">
+            <image src="{{item.images_s}}" mode="{{fill}}"></image>
+        </view>
+        <view class="listTitle">{{item.title}}</view>
+    </view>
+</scroll-view>

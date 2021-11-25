@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{0}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container">
+    <view class="banner">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}"  indicator-active-color="{{main_color}}">
+            <block wx:for="{{banner_img}}" wx:key="id">
+                <swiper-item>
+                    <image src="{{item}}" class="banner_img" mode="{{fill}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="box-contact w-100">
+        <button open-type="contact" class="btn flex flex_dj flex-Y-center">
+            <text class="f-36 bold"  style="color: {{main_color}};">4008-602-168</text>
+            <text class="f-24 c-fff more" style="background-color: {{main_color}};">立即咨询</text>
+        </button>
+    </view>
+    <view class="box-product w-100 mt-80"> 
+        <view class="b-title w-93 m-ot" >
+            <text class="en" style="color: {{main_color}};">Product</text>
+            <text class="cn">产品中心</text>
+        </view>
+        <view class="list">
+            <block wx:for="{{productClass_list}}" wx:key="class_id">
+                <view class="product-list mt-30">
+                    <view class="T flex w-93 m-ot " >
+                        <text class="tip f-24 c-fff" >新品\n推荐</text>
+                        <view class="L txt">
+                            <view class="flex cn flex-Y-center">{{item.title}} <text class="en">window</text></view>
+                            <view class="mymore f-24" style="color: {{main_color}};" bindtap="linkToClass" data-cid="{{item.class_id}}">立即购买</view>
+                        </view>
+                        <view class="R img">
+                            <image src="{{item.images_s}}" mode="{{fit}}"></image>
+                        </view>
+                        <view class="bg"></view>
+                    </view>
+                    <view class="list-box w-93 m-ot mt-30 flex flex-wrap">
+                        <block wx:for="{{hotProduct}}" wx:for-item="cell" wx:key="id"  wx:if="{{item.class_id == cell.class_id}}">
+                            <navigator class="list-item" url="" data-channel="product_detail" data-params="id={{cell.id}}" bind:tap="navigatorTap">
+                                <image src="{{cell.img}}" class="img" mode="{{fit}}"></image>
+                                <view class="txt">
+                                    <text class="f-28 c-444 font-over1 lh-18 w-100">{{cell.title}}</text>
+                                </view>
+                            </navigator>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>    
+
+    <view class="box-case w-100 mt-60">
+        <view class="w-93 m-ot">
+	    	<view class="b-title" >
+	            <text class="en" style="color: {{main_color}};">CASE</text>
+	            <text class="cn">案例欣赏</text>
+	        </view>
+            <view class="case-list mt-50 w-100">
+                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" circular="{{circular}}"  bindchange="bindchange" indicator-color="#dcdcdc" indicator-active-color="{{main_color}}">
+                    <block wx:for="{{case_img}}" wx:key="id">
+                        <swiper-item  bindtap="viewimg" data-img="{{item.images_s}}">
+                            <image src="{{item.images_s}}" class="case_img"   mode="{{fill}}"></image>
+                            <text class="p mt-20 font-over1">{{item.title}}</text>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view>
+
+    <view class="box-news w-100 mt-40">
+        <view class="w-93 m-ot">
+            <view class="b-title" >
+                <text class="en" style="color: {{main_color}};">NEWS</text>
+                <text class="cn">新闻资讯</text>
+            </view>
+            <view class="news-list mt-30">
+                <navigator wx:for="{{newsList}}" wx:key="id" class="news-item flex" data-channel="news_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+                    <view class="txt">
+                        <view class="font-over2 f-32 c-333">{{item.title}}</view>
+                        <view class="f-28 c-999 mt-30">{{item.addtime}}</view>
+                    </view>
+                    <image class="img" src="{{item.images ? item.images : 'http://qs.demo.pbinfo.cn/wxapp/xcx-002/img/nopic.jpg' }}" mode="{{fill}}"></image>
+                </navigator>
+            </view>
+            <navigator data-channel="news" data-params="" bind:tap="navigatorTap"  class="viewmore mt-40" style="background-color: {{main_color}};">查看更多资讯</navigator>
+        </view>
+    </view>
+</view>

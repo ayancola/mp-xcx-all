@@ -1,0 +1,17 @@
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<view class="news_detail w-93 m-ot pb-40">
+  <view class="detail_head">
+    <view class="head_title">{{title}}</view>
+    <view class="head_msg">
+      <view class="msg_time">发表时间：{{publishTime}}</view>
+      <view class="msg_look">
+        <image class="look_icon" src="{{pageWeburl}}/weapp_source/images/lookicon.png"></image>
+        {{hits}}
+      </view>
+    </view>
+  </view>
+  <view style="clear:both"></view>
+  <viwe class="detil_con">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </viwe>
+</view>

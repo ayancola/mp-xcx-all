@@ -1,0 +1,121 @@
+<!--index.wxml-->
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{0}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container">
+    <view class="banner">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}"  indicator-active-color="{{main_color}}">
+            <block wx:for="{{banner_img}}" wx:key="id">
+                <swiper-item>
+                    <image src="{{item}}" class="banner_img" mode="{{fill}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+   <view class="box-class w-100">
+        <view class="w-93 m-ot">
+            <view class="product-class flex flex-wrap">
+                <block wx:for="{{productClass_list}}" wx:key="id">
+                    <view class="class-item flex flex-wrap flex-Y-center {{index==0 ? 'flex-X-center':''}}" bindtap="linkToClass" data-cid="{{item.class_id}}" >
+                        <image class="img" src="{{item.images_s}}" mode="{{fit}}"></image>
+                        <view class="txt c-fff f-24">
+                            {{item.title}}<text class="f-20" wx:if="{{index!=0}}"> / {{item.title_en ? item.title_en :'SERIES'}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view> 
+
+    <view class="box-product w-100 mt-30">
+        <view class="title c-fff text-right w-93 m-ot">
+            <text class="cn">新品推荐</text>
+            <text class="en">New product</text>
+        </view>
+        <view class="w-100 list-box mt-30 flex flex-wrap">
+            <image src="http://qs.demo.pbinfo.cn/wxapp/xcx-014/img/pro.png" class="proImg" mode="{{fill}}"></image>
+            <view class="list-box mt-60">
+                <swiper indicator-dots="{{dicatorDots}}" duration="{{duration}}" indicator-active-color="{{main_color}}" circular="true" current="{{current}}" next-margin="410rpx" >
+                    <block wx:for="{{hotProduct}}" wx:key="id">
+                        <swiper-item  class="list-item {{swiperIdx == index ? 'active' : 'quiet'}}">
+                            <navigator  data-channel="product_detail" data-params="id={{item.id}}" bind:tap="navigatorTap" url="">
+                                <image src="{{item.img}}" class="img" mode="{{fill}}"></image>
+                                <view class="txt lh-18 mt-10 ">
+                                    <text class="f-24 c-333 font-over1 w-100">{{item.title}}</text>
+                                    <view class="f-30 lh-18 font-over1 price"><text>￥</text>1250</view>
+                                </view>
+                            </navigator>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view>
+
+    <view class="box-case w-100 mt-30">
+        <view class="w-93 m-ot">
+            <view class="title" style="border-left-color: {{main_color}};">
+                <text class="cn" style="color: {{main_color}};">应用案例/</text>
+                <text class="en f-24">CASE</text>
+            </view>
+            <view class="mt-30 list-box flex flex-wrap">
+                <block wx:for="{{case_img}}" wx:key="class_id">
+                    <view class="list-item {{swiperIdx == index ? 'active' : 'quiet'}}" data-cid="{{item.class_id}}"  bindtap="viewimg" data-img="{{item.images_s}}">
+                        <image src="{{item.images_s}}" class="img" mode="{{fill}}"></image>
+                        <text class="font-over1 text-center center c-fff f-24"  style="background-color: {{main_color}};">{{item.title}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    
+    <view class="box-productTj w-100">
+        <view class="b-fff w-93 m-ot">
+            <view class="title " style="border-left-color: {{main_color}};">
+                <text class="cn">产品展示</text>
+                <text class="en f-24"> / Product</text>
+            </view>
+            <view class="list-box mt-30 w-100 ">
+                <block wx:for="{{hotProduct}}" wx:key="id">
+                    <view class="list-item mt-40 flex" data-channel="product_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+                        <image src="{{item.img}}" class="img" mode="{{fill}}"></image>
+                        <view class="txt lh-18 mt-10 ">
+                            <text class="f-24 c-333 font-over1 w-100">{{item.title}}</text>
+                            <view class="flex mt-70 w-100">
+                                <view class="f-36 lh-18 font-over1 price">￥1250 <text>¥5556</text></view>
+                                <view class="buyBtn">立即购买</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <navigator data-channel="products" data-params="rid=10" bind:tap="navigatorTap" url='' class="more f-30 c-333 mt-70">查看更多产品</navigator>
+        </view>
+    </view>
+
+    <view class="ban-contact w-100 text-center">
+        <text class="f-36 bold c-fff" style="font-weight: bold;">咨询电话：4008-602-168</text>
+        <button open-type="contact" class="btn mt-30" style="color: {{main_color}};">
+            <text class="f-26">立即咨询 >></text>
+        </button>
+    </view>
+
+    <view class="box-news w-100 mt-60">
+        <view class="title" style="border-bottom-color: {{main_color}};">
+            <view class="w-93 m-ot">
+                <text class="cn" style="color: {{main_color}};">新闻资讯</text>
+                <text class="en f-24">NEWS</text>
+            </view>
+        </view>
+        <view class="w-100">
+            <view class="news-list mt-30">
+                <navigator wx:for="{{newsList}}" wx:key="id" class="news-item flex" data-channel="news_detail" data-params="id={{item.id}}" bind:tap="navigatorTap" url="">
+                    <view class="txt">
+                        <view class="font-over2 f-28 c-333">{{item.title}}</view>
+                        <view class="f-26 c-999 mt-30">{{item.addtime}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

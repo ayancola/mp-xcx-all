@@ -1,0 +1,58 @@
+<!--pages/about/about.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{1}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container">
+<image class="about_ban" src="{{about_ban}}" mode="{{fill}}"></image>
+  <view class='w-93 m-ot ab_profile'>
+    <view class='ab_title bc-main'>
+      <text class="f-36 title_cha c-main borc-main">企业简介</text>
+      <text class="title_eng">COMPANY PROFILE</text>
+    </view>
+    <view class='content f-28 c-666'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+      <!-- {{about_msg}} -->
+    </view>
+  </view>
+  <view class='w-100 ab_album'>
+    <view class='w-93 m-ot ab_title bc-main'>
+      <text class="f-36 title_cha c-main borc-main">企业相册</text>
+      <text class="title_eng">ENTERPRISE ALBUM</text>
+    </view>
+    <view class='w-93 mt-50 m-ot album_con'>
+      <swiper indicator-dots="{{alindicatorDots}}" autoplay="{{alautoplay}}" duration="{{alduration}}" display-multiple-items="2"  indicator-active-color="{{main_color}}">
+        <block wx:for="{{album_list}}" wx:key="id">
+          <swiper-item>
+            <view bindtap="albumviewimg" data-img="{{item.images}}">
+              <image src="{{item.images_s}}" class="album_img" mode="{{fill}}">
+              </image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <navigator url="" data-channel="photo" data-params="rid={{albumRid}}" bind:tap="navigatorTap"  class="viewmore mt-50"  style="background-color:{{main_color}};">查看更多</navigator>
+  </view>
+  <view class='w-93 m-ot ab_honor mt-50 pb-40'>
+    <view class='ab_title bc-main'>
+      <view class="title_text">
+        <text class="f-36 title_cha">资质荣誉</text>
+        <text class="title_eng">HONOR</text>
+      </view>
+    </view>
+    <view class='album_con'>
+      <swiper indicator-dots="{{honindicatorDots}}" autoplay="{{honautoplay}}" current="{{honcurrent}}" circular="{{circular}}" duration="{{honduration}}" previous-margin="230rpx" next-margin="230rpx" bindchange="bindchange"  indicator-active-color="{{main_color}}">
+        <block wx:for="{{honor_list}}" wx:key="id">
+          <swiper-item>
+            <view bindtap="honorViewimg" data-img="{{item.images}}">
+              <image src="{{item.images_s}}" class="album_img {{swiperIdx == index ? 'active' : 'quiet'}}" mode="{{fit}}" ></image>
+              <view class="{{swiperIdx == index ? 'almun_title' : 'almun_none'}}" style="color:{{swiperIdx == index ? main_color :''}};">{{item.title}}</view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <navigator data-channel="photo" data-params="rid={{honorRid}}" bind:tap="navigatorTap"  class="viewmore mt-50"  style="background-color:{{main_color}};">查看更多</navigator>
+  </view>
+</view>

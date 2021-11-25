@@ -1,0 +1,29 @@
+<!--pages/search/search.wxml-->
+<scroll-view class='scroll-view w-100 h-100 search' scroll-y bindscrolltolower='scroll_bottom'>
+  <view class='page-T T'  style="background-color:{{main_color}};">
+    <view class='w-93 m-ot'>
+      <text class='block f-60 c-fff'>产品搜索</text>
+      <form bindsubmit='search'>
+        <input confirm-type='search'  bindconfirm="search" type='text' focus='{{focus}}' placeholder='请输入搜索关键字' placeholder-style='color:#999'	 adjust-position='false' class='f-24 dis-m' name='search' value="{{key_word}}" ></input>
+        <button form-type='submit' class='dis-m' hover-class='none'><image src='{{pageWeburl}}/weapp_source/images/search.png' mode='{{fit}}'></image></button>
+      </form>
+    </view>
+  </view>
+  <view class='mt-60 flex flex_dj' wx:if="{{list != ''}}">
+    <block wx:for='{{list}}' wx:key='id'>
+      <view class='list'>
+        <navigator hover-class='none' data-channel="product_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+          <view class='list-img'>
+            <image src='{{item.img}}' mode='{{fill}}'></image>
+          </view>
+          <view class='view-text'>
+            <text class='font-over1 f-28 c-333 title'>{{item.title}}</text>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+  <view wx:else>
+     <text class='mt-60 font-over1 f-32 c-333 title text-center'>暂无搜索结果...</text>
+  </view>
+</scroll-view>

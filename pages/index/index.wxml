@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="page_container">
+  <view class="page_wrapper" style="min-height:{{window.windowHeight}}px;">
+    <view class="loading_msg_container" wx:if="{{!onerror}}">
+      <view class="loading_ani">
+        <view class="loader-container"> <view class="loader four"></view></view>
+      </view>        
+      <text class="loading_msg_text" selectable="{{true}}" space="false" decode="false">读取中，请稍候...</text>
+    </view>
+    
+    <view class="error_msg_container" wx:if="{{onerror}}">
+         <image class="error_msg_icon" src="{{resUrl}}weapp_source/images/scan_tip.png" mode="aspectFit" wx:if="{{scan_tip_img}}"></image>
+         <text class="error_msg_text" selectable="{{true}}" space="false" decode="false">{{errmsg}}</text>
+         <text class="error_msg_text" selectable="{{true}}" space="false" decode="false">MP站小程序 | 鹏博资讯\npbinfo.cn | 0757-81188070</text>
+    </view>
+      
+      
+  </view>
+    
+</view>
+  

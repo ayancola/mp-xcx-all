@@ -1,0 +1,32 @@
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<view class="product_ban">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" indicator-active-color="{{main_color}}">
+    <block wx:for="{{product_ban}}" wx:key="id">
+      <swiper-item>
+        <image src="{{item}}" class="proImgList" mode="{{fit}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="product w-93 m-ot pb-40">
+  <view class="pro_msg">
+    <view class="msg_left">
+      <view class="msg_name">{{productName}}</view>
+      <view class="msg_class">类型：{{productClass}}</view>
+    </view>
+    <view class="msg_right">
+      <view class="link_btn">
+        <button open-type="contact" style="background-color:{{main_color}};">立即咨询</button>
+      </view>
+    </view>
+  </view>
+  <view class="pro_con">
+    <view class="con_head" style="border-color:{{main_color}};">
+      <text class="f-36 title_cha" style="color:{{main_color}};">产品介绍</text>
+      <text class="title_eng">INTRODUCT</text>
+    </view>
+    <view class="con_detail">
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+  </view>
+</view>

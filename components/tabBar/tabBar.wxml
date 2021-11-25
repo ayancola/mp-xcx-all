@@ -1,0 +1,20 @@
+<!--components/tabBar/tabBar.wxml-->
+<view class="tabBarContainer">
+    <view class="tabBar">
+        <block wx:for="{{content}}" wx:for-item="item" wx:key="index">
+            <view class="tabBar-item">
+                <button class="tabBar_button" hover-class="tabBar_button_hover" bind:tap="OnButtonTap" data-index="{{index}}">
+                    <view>
+                        <!-- <image wx:if="{{current==index}}" class="tabBar-icon" src='http://qs.demo.pbinfo.cn/wxapp/xcx-{{iconPath}}/img/{{item.selectedIconPath}}'></image> -->
+                        <image wx:if="{{current==index}}" class="tabBar-icon" src='http://qs.demo.pbinfo.cn/wxapp/{{iconPath}}/img/{{item.selectedIconPath}}'></image>
+                        <!-- <image wx:else class="tabBar-icon" src='http://qs.demo.pbinfo.cn/wxapp/xcx-{{iconPath}}/img/{{item.iconPath}}'></image> -->
+                        <image wx:else class="tabBar-icon" src='http://qs.demo.pbinfo.cn/wxapp/{{iconPath}}/img/{{item.iconPath}}'></image>
+                    </view>
+                    <view style="color:{{current==index ? main_color :''}};">{{item.text}}</view>                    
+                </button>
+            </view>
+        </block>
+    </view>    
+</view>
+  
+

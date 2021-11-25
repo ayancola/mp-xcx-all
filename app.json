@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/common/about/about",
+    "pages/common/products/products",
+    "pages/common/product_detail/product_detail",
+    "pages/common/photo/photo",
+    "pages/common/news/news",
+    "pages/common/news_detail/news_detail",
+    "pages/common/search/search",
+    "pages/common/contact/contact",
+    "pages/common/message/message",
+    "pages/tpl/xcx-002/index",
+    "pages/tpl/xcx-003/index",
+    "pages/tpl/xcx-004/index",
+    "pages/tpl/xcx-005/index",
+    "pages/tpl/xcx-006/index",
+    "pages/tpl/xcx-007/index",
+    "pages/tpl/xcx-008/index",
+    "pages/tpl/xcx-009/index",
+    "pages/tpl/xcx-010/index",
+    "pages/tpl/xcx-011/index",
+    "pages/tpl/xcx-012/index",
+    "pages/tpl/xcx-013/index",
+    "pages/tpl/xcx-001/index",
+    "pages/tpl/xcx-014/index",
+    "pages/tpl/xcx-015/index",
+    "pages/tpl/xcx-016/index",
+    "pages/tpl/xcx-017/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "将获取你的位置信息"
+    }
+  }
+}

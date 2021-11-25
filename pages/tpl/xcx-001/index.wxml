@@ -1,0 +1,85 @@
+<!--pages/tpl/xcx-001/index.wxml-->
+<!--index.wxml-->
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{0}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container">
+    <view class="banner">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+            <block wx:for="{{banner_img}}" wx:key="id">
+                <swiper-item>
+                    <image src="{{item}}" class="banner_img" mode="{{fit}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="product">
+    <view class="pro_class">
+        <swiper indicator-dots="{{proindicatorDots}}" autoplay="{{proautoplay}}" duration="{{produration}}" display-multiple-items="3">
+            <block wx:for="{{productClass_list}}" wx:key="id">
+                <swiper-item>
+                    <view bindtap="linkToClass" data-cid="{{item.class_id}}">
+                    <image src="{{item.images_s}}" class="proClass_img" mode="{{fill}}">
+                        <view class="className">{{item.title}}</view>
+                        <image src="{{pageWeburl}}/weapp_source/images/overlay.png" class="zzc"></image>
+                    </image>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="pro_recommendmend">
+        <view class="com_head">
+        <text class="head_cha">推荐产品</text>
+        <text class="head_eng">RECOMMEND</text>
+        <view class="more">
+            <navigator data-channel="products" data-params="" bind:tap="navigatorTap" url='' >更多 ></navigator>
+        </view>
+        </view>
+        <view class="recom_con">
+        <view class="con_item" wx:for="{{hotProduct}}" wx:key="id">
+            <navigator url="" data-channel="product_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+            <image src="{{item.img}}" class="pro_img" mode="{{fill}}"></image>
+            <view class="pro_name">{{item.title}}</view>
+            </navigator>
+        </view>
+        </view>
+    </view>
+    </view>
+    <view class="about">
+    <view class="com_head">
+        <text class="head_cha">关于我们</text>
+        <text class="head_eng">ABOUT US</text>
+        <view class="more">
+        <navigator url='' data-channel="about" data-params="" bind:tap="navigatorTap" >更多 ></navigator>
+        </view>
+    </view>
+    <view class="about_con">
+        <image class="about_ban" src="{{about_ban}}" mode="{{fit}}"></image>
+        <view class="about_name">鹏博门窗</view>
+        <view class="blue_line"></view>
+        <view class="about_txt">{{about_msg}}</view>
+    </view>
+    </view>
+    <view class="news">
+    <view class="com_head">
+        <text class="head_cha">新闻资讯</text>
+        <text class="head_eng">NEWS</text>
+        <view class="more">
+        <navigator url='' data-channel="news" data-params="" bind:tap="navigatorTap" >更多 ></navigator>
+        </view>
+    </view>
+    <view class="news_con">
+        <view class="con_item" wx:for="{{newsList}}" wx:key="id">
+        <navigator url="" data-channel="news_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+            <image class="con_img" src="{{item.images}}" mode="{{fill}}"></image>
+            <view class="con_right">
+            <view class="news_title">{{item.title}}</view>
+            <view class="news_time">{{item.publish_Y}}/{{item.publish_M}}/{{item.publish_D}}</view>
+            </view>
+        </navigator>
+        </view>
+    </view>
+    </view>
+
+</view>

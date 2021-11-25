@@ -1,0 +1,46 @@
+<!--pages/contact/contact.wxml-->
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{4}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container" style="height:{{window.windowHeight}}px">
+  <view class="contact" wx:if="{{contactShow}}">
+    <map id="myMap" style="width: 100%; height: 100%;" latitude="{{latitude}}" longitude="{{longitude}}"  markers="{{markers}}" scale='{{scale}}' show-location >
+    </map>
+
+    <view class="contact_btn">
+      <view class="btn_view">
+        <!-- <contact-button class="zxkf" type="default-light" session-from="weapp"> -->
+        <button class="zxkf" open-type="contact" style="background-color:{{main_color}};">
+          咨询客服
+          <image class="btn_rjt" src="{{pageWeburl}}/weapp_source/images/rjt.png"></image>
+        </button>
+      </view>
+      <view class="btn_view">
+        <navigator class="zxly" data-channel="message" data-params="" bind:tap="navigatorTap">
+        <!-- <navigator class="zxly" bindtap="showMessage"> -->
+          在线留言
+          <image class="btn_rjt" src="{{pageWeburl}}/weapp_source/images/rjt.png"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class='pos-a msg w-93 Xcenter'>
+      <image class="msg_bg" src="{{pageWeburl}}/weapp_source/images/contact_ov.png"></image>
+      <view class='f-30 c-fff title pos-r' bindtap='click'>{{company}}
+        <view class='icon text-center' style="background-color:{{main_color}};"> > </view>
+      </view>
+      <view class='msg-list'>
+        <block wx:for='{{msg_list}}' wx:key='id'>
+          <cover-view class='list c-fff f-28'>
+            <cover-view class='list-L dis-t'>
+              <cover-view class='dis-m img'>
+                <cover-image src='{{item.icon}}'></cover-image>
+              </cover-view>
+              <cover-view class='label dis-m'>{{item.lable}}：</cover-view>
+            </cover-view>
+            <cover-view class='list-R dis-t'>{{item.text}}</cover-view>
+          </cover-view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+/**index.wxss**/
+.container{padding-bottom: 116rpx;}
+.banner{width: 100%;}
+.banner swiper{width: 100%;height: 600rpx;}
+.banner swiper .wx-swiper-dot,.box-case swiper .wx-swiper-dot{background-color: rgba(255,255,255,0.3);width: 45rpx;height: 8rpx;border-radius: 20rpx;}
+.banner swiper .wx-swiper-dots.wx-swiper-dots-horizontal{bottom: 30rpx;}
+.banner image{height: 600rpx; width: 100%;}
+.viewmore{padding: 0.2em 0;}
+.bold{font-weight: bold;}
+
+.box-contact{padding: 45rpx 22rpx;box-sizing: border-box;box-shadow: 0 5rpx 10rpx 0 rgba(0,0,0,0.1);
+	background: url(http://qs.demo.pbinfo.cn/wxapp/xcx-017/img/phone.png) 20rpx center no-repeat;background-size: 98rpx;
+}
+.box-contact .btn{width: 100%;box-sizing: border-box;padding: 0 0 0 120rpx;background: none;}
+.box-contact .btn text{line-height: 60rpx;}
+.box-contact .more{line-height: 60rpx;height: 60rxp;border-radius: 10rpx;width: 6em;text-align: center;}
+
+.b-title{box-sizing: border-box;font-size: 48rpx;border-radius: 10rpx;
+	padding: 20rpx 0 0 0;background-size: cover;text-align: center;line-height: 1.2;
+}
+.b-title .cn{transform: translateY(-0.8em);display: block;}
+.b-title .en{opacity: 0.15; text-transform: uppercase;display: block;font-weight: bold;}
+
+
+.box-product .product-list{padding: 110rpx 0 25rpx 0;box-sizing: border-box;position: relative;z-index: 1;background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+.box-product .tip{position: absolute;top: 0;right: 0;background-color: #a7201b;border-bottom-left-radius: 20rpx;
+	display: block;padding: 8rpx 18rpx;line-height: 1.5;text-align: center;
+}
+.box-product .product-list:nth-of-type(1){background-image: url(http://qs.demo.pbinfo.cn/wxapp/xcx-017/img/bg1.png);}
+.box-product .product-list:nth-of-type(2){background-image: url(http://qs.demo.pbinfo.cn/wxapp/xcx-017/img/bg2.png);}
+.box-product .product-list:nth-of-type(3){background-image: url(http://qs.demo.pbinfo.cn/wxapp/xcx-017/img/bg3.png);}
+.box-product .T{background: #fff9e8;border-top-left-radius: 40rpx;border-bottom-right-radius: 40rpx;position: relative;
+	padding: 30rpx 48rpx;box-sizing: border-box;
+}
+.box-product .T .L,.box-product .T .R{position: relative;z-index: 1;}
+.box-product .txt .cn{font-size: 30rpx;color: #333333; line-height: 1.6;font-weight: normal;}
+.box-product .txt .en{display: inline-block;font-size: 20rpx;color: #be2014;margin-left: 0.5em;text-transform: uppercase;
+	border: 1px dashed #be2014;height: 30rpx;line-height: 30rpx;padding: 0 0.5em;
+}
+.box-product .T .img{width: 240rpx;height: 260rpx;}
+.box-product .list-box{position: relative;z-index: 1;}
+.box-product .list-item{width: 48.5%;margin-bottom: 25rpx;background-color: #fafafa;padding-bottom: 20rpx;}
+.box-product .list-item:nth-child(2n){margin-left: 3%;}
+.box-product .list-item image{height: 280rpx;overflow: hidden;margin-bottom: 20rpx;}
+.box-product .list-item text{display: block;text-align: center;}
+.box-product>view + view{margin-top: 45rpx;}
+
+.box-case{padding-top: 60rpx;border-top: 15rpx solid #f5f5f5;}
+.box-case swiper{height: 516rpx;}
+.box-case swiper swiper-item{box-sizing: border-box;}
+.box-case swiper swiper-item image{width: 100%;height: 410rpx;position: relative;box-sizing: border-box;margin-bottom: 10rpx;opacity: 1;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);border-radius: 10rpx;overflow: hidden;
+}
+.box-case swiper swiper-item text{display: block;width: 100%;height: 40rpx;line-height: 40rpx;text-align: center;color: #4c4c4c;font-size: 30rpx;}
+.box-case swiper .wx-swiper-dots.wx-swiper-dots-horizontal{bottom: 0;}
+
+/* 新闻板块 */
+.box-news {padding-bottom: 80rpx;border-top: 15rpx solid #f5f5f5;}
+.box-news .title{border-bottom: 4rpx solid #fff;padding-bottom: 30rpx;}
+.box-news .title .cn{font-weight: bold;margin-right: 0.6em;}
+.news-list .news-item{width: 100%;overflow: hidden;padding:40rpx 0;}
+.news-list navigator{border-top: 1px solid #d2d2d2;}
+.news-list navigator:last-child{border-bottom: 1px solid #d2d2d2;}
+.news-list .news-item .img{width: 40%;height: 200rpx;}
+.news-list .news-item .txt{width: 55%;box-sizing: border-box;position: relative;text-align: left;margin-right: 5%;padding-top: 15rpx;}

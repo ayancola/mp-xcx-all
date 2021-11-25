@@ -1,0 +1,50 @@
+/**index.wxss**/
+/* 首页板块标题 */
+/* banner轮播图 */
+.banner{width: 100%;}
+.banner swiper{width: 100%;height: 600rpx;}
+.banner swiper .wx-swiper-dot{background-color: #e5e5e5;width: 45rpx;height: 8rpx;border-radius: 20rpx;}
+.banner swiper .wx-swiper-dots.wx-swiper-dots-horizontal{bottom: 30rpx;}
+.banner image{height: 600rpx; width: 100%;}
+.viewmore{border-radius: 1em !important;}
+
+.title{line-height: 1.5;position: relative;}
+.title .cn{line-height: 48rpx;color: #da1212;font-size: 42rpx;display: block;font-weight: bold;}
+.title .en{line-height: 1.25;color: #999999;font-size: 28rpx;text-transform: uppercase;}
+
+
+.box1 {padding-left: 4%;box-sizing: border-box;width: 100%;}
+.box1 swiper {height: 480rpx;}
+.box1 swiper-item {height: 480rpx;}
+.box1 .product-class{position: relative;}
+.box1 .list-item image{width: 90%;height: 80%;margin: 10% auto;}
+.box1 .list-item{display: block;width: 500rpx; height: 450rpx;overflow: hidden;background: #fff;margin: 15rpx;
+	transform: scale(1.1,0.55);box-shadow: 0 0 8px 0 rgba(0,0,0,0.1);position: relative;border-radius: 10rpx;
+}
+.box1 .list-item text{display: none;}
+.box1 .active text{position: absolute;bottom: 5px;left: 20rpx;width: 90%;display: inline-block;}
+.box1 .active{transform: scale(1);z-index: 2;}
+.box1 .btn-list{position: absolute;bottom:15rpx;text-align: center;left: 400rpx;}
+.box1 .btn-list view{float: left;width: 116rpx;height: 70rpx;line-height: 70rpx;}
+.box1 .btn-left{background: #313131;}
+.box1 .btn-right{background: #da1212;}
+
+.box2 .title{background: url(http://qs.demo.pbinfo.cn/wxapp/xcx-005/img/bg.jpg);background-size: cover;padding: 50rpx;} 
+.box2 navigator{width: 47.5%;border-radius: 10rpx;margin-bottom: 60rpx;}
+.box2 navigator:nth-of-type(2n){margin-left: 5%;}
+.box2 image{border: 1px solid #e5e5e5;box-sizing: border-box;height: 250rpx;}
+
+.box3{border-top: 15rpx solid #313131;border-bottom: 15rpx solid #313131;padding: 50rpx 22rpx;box-sizing: border-box;}
+.box3 .btn{width: 46.5%;background-color: #eeeeee;background-position: 20rpx 22rpx;background-size: auto 88rpx;
+	background-repeat: no-repeat; box-sizing: border-box;padding: 20rpx;border-radius: 10rpx;text-align: right;
+}
+.box3 .btn text{display: block;line-height: 1.5;}
+.box3 .btn1{background-image: url(http://qs.demo.pbinfo.cn/wxapp/xcx-005/img/btn1.jpg);background-color: #da1212;}
+.box3 .btn2{background-image: url(http://qs.demo.pbinfo.cn/wxapp/xcx-005/img/btn2.jpg);margin-left: 7%;}
+
+/* 新闻板块 */
+.box4 .title{text-align: left;}
+.news-list .news-item{width: 100%;overflow: hidden;}
+.news-list navigator + navigator{margin-top: 40rpx;}
+.news-list .news-item .img{width: 40%;height: 200rpx;margin-left: 5%;}
+.news-list .news-item .txt{width: 55%;box-sizing: border-box;position: relative;text-align: left;padding-top: 15rpx;}

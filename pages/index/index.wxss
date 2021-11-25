@@ -1,0 +1,95 @@
+/**index.wxss**/
+
+
+/* Loading Animation */
+
+.loader-container {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+}
+
+.four {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 50%;
+    animation: loader4Animation 1s linear infinite;
+    margin-left: -15px;
+}
+
+.error_msg_icon{
+    width: 322rpx;
+    height: 311rpx;
+    margin:0 auto 40rpx auto;
+}
+
+@keyframes loader4Animation {
+    0% {
+        background-color: rgba(24, 24, 24, 1);
+        box-shadow: 15px 0px 0px 0px rgba(24, 24, 24, 0.67), 30px 0px 0px 0px rgba(24, 24, 24, 0.33);
+    }
+    17% {
+        background-color: rgba(24, 24, 24, 0.67);
+        box-shadow: 15px 0px 0px 0px rgba(24, 24, 24, 1), 30px 0px 0px 0px rgba(24, 24, 24, 0.67);
+    }
+    33% {
+        background-color: rgba(24, 24, 24, 0.33);
+        box-shadow: 15px 0px 0px 0px rgba(24, 24, 24, 0.67), 30px 0px 0px 0px rgba(24, 24, 24, 1);
+    }
+    50% {
+        background-color: rgba(24, 24, 24, 0);
+        box-shadow: 15px 0px 0px 0px rgba(24, 24, 24, 0.33), 30px 0px 0px 0px rgba(24, 24, 24, 0.67);
+    }
+    67% {
+        background-color: rgba(24, 24, 24, 0.33);
+        box-shadow: 15px 0px 0px 0px rgba(24, 24, 24, 0), 30px 0px 0px 0px rgba(24, 24, 24, 0.33);
+    }
+    83% {
+        background-color: rgba(24, 24, 24, 0.67);
+        box-shadow: 15px 0px 0px 0px rgba(24, 24, 24, 0.33), 30px 0px 0px 0px rgba(24, 24, 24, 0);
+    }
+    100% {
+        background-color: rgba(24, 24, 24, 1);
+        box-shadow: 15px 0px 0px 0px rgba(24, 24, 24, 0.67), 30px 0px 0px 0px rgba(24, 24, 24, 0.33);
+    }
+}
+
+/* Loading Msg */
+.loading_msg_container {
+    width: 100%;
+    margin-top: 200rpx;
+}
+
+.loading_msg_container .loading_msg_text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+    font-size: 26rpx;
+    color: #ccc;
+    text-align: center;
+}
+
+/* Error Msg */
+.error_msg_container {
+    width: 100%;
+    margin-top: 200rpx;
+}
+
+.error_msg_container .error_msg_text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+    font-size: 26rpx;
+    color: #ccc;
+    text-align: center;
+}

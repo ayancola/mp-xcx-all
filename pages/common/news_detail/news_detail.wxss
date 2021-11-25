@@ -1,0 +1,2 @@
+/**news_detail.wxss**/
+@import "../../../utils/wxParse/wxParse.wxss";

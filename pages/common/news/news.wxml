@@ -1,0 +1,28 @@
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{3}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container">
+  <view class="news w-93 m-ot scroll-view">
+    <view class="news_tab">
+      <view class="tab_item" wx:for="{{nav_list}}" wx:key="index" bindtap="change_list" data-cid="{{item.id}}" data-index='{{item.index}}'  style="border-color:{{item.index==list_index ? main_color : ''}};">{{item.name}}</view>
+    </view>
+    <scroll-view class="news_list">
+      <view class="list_item" wx:for="{{item_list}}" wx:key="id">
+        <navigator data-channel="news_detail" data-params="id={{item.id}}" bind:tap="navigatorTap">
+          <view class="item_left">
+            <view class="item_MD" style="color:{{main_color}};">{{item.publish_M}}/{{item.publish_D}}</view>
+            <view class="item_Y">{{item.publish_Y}}</view>
+          </view>
+          <view class="item_right">
+            <view class="item_title font-over1">{{item.title}}</view>
+            <view class="item_excerpt font-over1">{{item.description}}</view>
+            <view class="item_look">
+              <image class="look_icon" src="{{pageWeburl}}/weapp_source/images/lookicon.png"></image>
+              {{item.hits}}
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view class="globalNavBar">
+    <TabBar iconPath="{{iconUrl}}" current="{{0}}" main_color="{{main_color}}"></TabBar>
+</view>
+<view class="container">
+        <view class="banner">
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}"  indicator-active-color="{{main_color}}">
+                <block wx:for="{{banner_img}}" wx:key="id">
+                    <swiper-item>
+                        <image src="{{item}}" class="banner_img" mode="{{fill}}"></image>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class='i1 w-100 text-center'>
+            <view class="title">匠心工艺 钻石品质</view>
+            <view class="list mt-50">
+                <block wx:for='{{i1_list}}' wx:key='id'>
+                    <navigator hover-class='{{$N}}' class='dis-t text-center' data-channel="{{item.channel}}" data-params="{{item.params}}" bind:tap="navigatorTap" url=''>
+                      <view>
+                        <image src='{{item.img}}' class='block m-ot' mode='{{fit}}'></image>
+                      </view>
+                      <text class='block f-26 c-666 text-center'>{{item.text}}</text>
+                    </navigator>
+                </block>
+            </view>
+        </view>
+        <view class="box-class w-100 mt-70">
+            <view class="b-title w-93 m-ot"  style="border-left-color: {{main_color}};">
+                <text class="cn">推荐系列</text>
+                <text class="en"> /  Recommend</text>
+            </view>
+            <view class="product-class mt-30">
+                <text class="block w-93 m-ot f-24 c-fff">柔和的中性色肤感饰面，淬炼出简雅而宁静的氛围</text>
+                <text class="block w-93 m-ot f-12 c-fff">Soft neutral color skin feeling finish, refined a simple elegant and quiet atmosphere</text>
+                <view class="list-box w-93 m-ot mt-50">
+                    <block wx:for="{{productClass_list}}" wx:key="id">
+                        <view class="list-item w-100 flex" bindtap="linkToClass" data-cid="{{item.class_id}}" >
+                            <image class="img" src="{{item.images_s}}" mode="{{fill}}"></image>
+                            <view class="txt">
+                                <view class="font-over1 f-30 bold">{{item.title}}</view>
+                                <view class="f-24 mt-10">SERIES</view>
+                                <text class="more mt-50" style="background-color: {{main_color}};">查看更多 ></text>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <navigator  data-channel="products" data-params="cid=3" bind:tap="navigatorTap" url='/pages/products/products?cid=3' class="viewmore mt-70" style="background-color: {{main_color}};">查看更多产品</navigator>
+            
+        </view>
+
+        <view class="box-product w-100 mt-80"> 
+            <view class="T text-center c-fff f-36 lh-18" style="background-color: {{main_color}};">
+                <view >PRODUCT</view>
+                <view >产品展示</view>
+                <navigator  data-channel="products" data-params="rid=11" bind:tap="navigatorTap" url='' class="more mt-60 block m-ot f-28" style="color: {{main_color}};">查看更多></navigator>
+            </view>
+            <view class="w-93 m-ot list mt-60">
+                <view class="product-list w-100 flex flex-wrap">
+                    <block wx:for="{{hotProduct}}" wx:key="id">
+                        <view class="list-item">
+                            <view class="ico">新品</view>
+                            <navigator data-channel="product_detail" data-params="id={{item.id}}" bind:tap="navigatorTap" url="">
+                                <image src="{{item.img}}" class="img" mode="{{fill}}" ></image>
+                                <view class="txt">
+                                    <text class="f-30 c-333 font-over1">{{item.title}}</text>
+                                    <view class="f-36 c-999 font-over1 price"><text>¥</text>2000</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>    
+
+        <view class="box-news w-100 mt-60">
+            <view class="b-title w-93 m-ot" style="border-left-color: {{main_color}};">
+                <text class="cn">新闻资讯</text>
+                <text class="en"> /  NEWS</text>
+            </view>
+            <view class="news-list mt-60 w-93 m-ot">
+                <navigator wx:for="{{newsList}}" wx:key="id" class="news-item flex"  data-channel="news_detail" data-params="id={{item.id}}" bind:tap="navigatorTap" url="">
+                    <image class="img" src="{{item.images ? item.images : 'http://qs.demo.pbinfo.cn/wxapp/xcx-002/img/nopic.jpg' }}" mode="{{fill}}"></image>
+                    <view class="txt c-fff">
+                        <view class="font-over2 f-28">{{item.title}}</view>
+                        <view class="f-26 mt-30">{{item.addtime}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+</view>
