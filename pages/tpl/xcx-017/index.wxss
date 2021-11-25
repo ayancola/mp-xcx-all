@@ -32,20 +32,29 @@
 .box-product .product-list:nth-of-type(2){background-image: url(http://qs.demo.pbinfo.cn/wxapp/xcx-017/img/bg2.png);}
 .box-product .product-list:nth-of-type(3){background-image: url(http://qs.demo.pbinfo.cn/wxapp/xcx-017/img/bg3.png);}
 .box-product .T{background: #fff9e8;border-top-left-radius: 40rpx;border-bottom-right-radius: 40rpx;position: relative;
-	padding: 30rpx 48rpx;box-sizing: border-box;
+	padding: 30rpx 48rpx;box-sizing: border-box;overflow: hidden;
 }
 .box-product .T .L,.box-product .T .R{position: relative;z-index: 1;}
 .box-product .txt .cn{font-size: 30rpx;color: #333333; line-height: 1.6;font-weight: normal;}
 .box-product .txt .en{display: inline-block;font-size: 20rpx;color: #be2014;margin-left: 0.5em;text-transform: uppercase;
 	border: 1px dashed #be2014;height: 30rpx;line-height: 30rpx;padding: 0 0.5em;
 }
-.box-product .T .img{width: 240rpx;height: 260rpx;}
+.box-product .T .img{width: 200rpx;height: 260rpx;margin-left: 40rpx;}
+.box-product .T .txt{width: 320rpx;}
+.box-product .T .more{background: #bf332b;padding: 15rpx 41rpx 15rpx 0;width: 100%;padding-left: 50rpx;margin-left: -50rpx;
+	border-top-right-radius: 40rpx;border-bottom-right-radius: 40rpx;line-height: 38rpx;
+}
+.box-product .T .more text{background: #fff9e8;color: #be2014;border-radius: 5rpx;text-align: center;display: inline-block;width: 6em;float: right;
+	line-height: 38rpx;height: 38rpx;
+}
 .box-product .list-box{position: relative;z-index: 1;}
-.box-product .list-item{width: 48.5%;margin-bottom: 25rpx;background-color: #fafafa;padding-bottom: 20rpx;}
+.box-product .list-item{width: 48.5%;background-color: #fafafa;padding-bottom: 20rpx;box-shadow: 0 5rpx 5rpx 0 rgba(0,0,0,0.1);}
 .box-product .list-item:nth-child(2n){margin-left: 3%;}
 .box-product .list-item image{height: 280rpx;overflow: hidden;margin-bottom: 20rpx;}
-.box-product .list-item text{display: block;text-align: center;}
 .box-product>view + view{margin-top: 45rpx;}
+.box-product .list-item .b{line-height: 1.8;box-sizing: border-box;padding: 0 20rpx;}
+.box-product .list-item .price{width: calc(100% - 130rpx);}
+.box-product .list-item .btn{width: 120rpx;text-align: center;border-radius: 0.9em;height: 1.8em;line-height: 1.8;}
 
 .box-case{padding-top: 60rpx;border-top: 15rpx solid #f5f5f5;}
 .box-case swiper{height: 516rpx;}

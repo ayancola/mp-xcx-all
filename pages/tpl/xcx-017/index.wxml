@@ -30,7 +30,11 @@
                         <text class="tip f-24 c-fff" >新品\n推荐</text>
                         <view class="L txt">
                             <view class="flex cn flex-Y-center">{{item.title}} <text class="en">window</text></view>
-                            <view class="mymore f-24" style="color: {{main_color}};" bindtap="linkToClass" data-cid="{{item.class_id}}">立即购买</view>
+                            <text class="f-24 c-999">铝型材具有良好的铸造性能，能加工成不同形状的铝型材。</text>
+                            <view class="more f-24 mt-20 c-fff" bindtap="linkToClass" data-cid="{{item.class_id}}">
+                                系列更多产品
+                                <text style="color: {{main_color}};">立即购买</text>
+                            </view>
                         </view>
                         <view class="R img">
                             <image src="{{item.images_s}}" mode="{{fit}}"></image>
@@ -42,7 +46,15 @@
                             <navigator class="list-item" url="" data-channel="product_detail" data-params="id={{cell.id}}" bind:tap="navigatorTap">
                                 <image src="{{cell.img}}" class="img" mode="{{fit}}"></image>
                                 <view class="txt">
-                                    <text class="f-28 c-444 font-over1 lh-18 w-100">{{cell.title}}</text>
+                                    <text class="f-28 c-444 font-over1 lh-18 w-100 text-center ">{{cell.title}}</text>
+                                    <view class="b flex flex_dj mt-10 flex-Y-center">
+                                        <view class="f-20 c-999 font-over1 price">
+                                            活动价: 
+                                            <text style="color: {{main_color}};">¥</text>
+                                            <text class="f-30 bold" style="color: {{main_color}};">2000</text>
+                                        </view>
+                                        <text class="f-18 btn c-fff"  style="background-color: {{main_color}};">点击查看</text>
+                                    </view>
                                 </view>
                             </navigator>
                         </block>
